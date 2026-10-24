@@ -1,0 +1,59 @@
+<div class="page">
+  <!-- タイトル -->
+  <header class="page-header">
+    <h1 class="page-title">マスタメンテナンス</h1>
+
+    <div class="page-actions">
+      <button type="button">戻る</button>
+      <button type="button">閉じる</button>
+    </div>
+  </header>
+
+  <!-- 検索 -->
+  <section class="search-area">
+    <div class="search-form">
+      <label>
+        コード
+        <input type="text" />
+      </label>
+
+      <label>
+        名称
+        <input type="text" />
+      </label>
+
+      <button type="button">検索</button>
+    </div>
+
+    <div class="record-count">表示件数: 128件</div>
+  </section>
+
+  <!-- 操作 -->
+  <section class="toolbar">
+    <div class="toolbar-left">
+      <button type="button">新規登録</button>
+      <button type="button">保存</button>
+
+      <span class="dirty-count"> 未保存の変更: 3件 </span>
+    </div>
+
+    <div class="toolbar-right">
+      <button type="button">DL</button>
+      <button type="button">UP</button>
+    </div>
+  </section>
+
+  <!-- メッセージ -->
+  <section class="message-panel">
+    <details open>
+      <summary>メッセージ 2件</summary>
+      <div class="message-body">
+        <div class="message error">1行目: データが重複しています</div>
+        <div class="message warning">
+          検索結果が1,000件を超えています(総件数: 3,500件)。 <br />
+          先頭1,000件のみ表示しています。検索条件をさらに絞り込んでください。
+        </div>
+      </div>
+    </details>
+  </section>
+</div>
