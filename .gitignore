@@ -125,6 +125,9 @@ dist
 # Stores Visual Studio Code versions used for testing Visual Studio Code extensions
 .vscode-test
 
+# Editor directories
+.vscode/
+
 # pnpm
 .pnpm-store
 
@@ -147,3 +150,11 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Windows
+Thumbs.db
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
