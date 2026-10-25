@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .table-container {
+        overflow: auto;
+        max-height: 500px;
+        max-width: 100%;
+      }
+
+      table {
+        border-collapse: separate; /* borderの崩れを防ぐため、collapseではなくseparate推奨 */
+        border-spacing: 0;
+      }
+
+      /* 固定対象のセルに適用するスタイル */
+      .sticky-row {
+        position: sticky;
+        top: var(--sticky-top, 0);
+        z-index: 2;
+        background: #f5f5f5; /* 背景色がないと下が透けます */
+      }
+
+      .sticky-col {
+        position: sticky;
+        left: var(--sticky-left, 0);
+        z-index: 2;
+        background: #f5f5f5;
+      }
+
+      /* 行と列が交差して両方固定されるセル（最前面に配置） */
+      .sticky-row.sticky-col {
+        z-index: 3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- data-fix-rows と data-fix-cols で固定したい数を動的に変更可能にする -->
+    <div class="table-container">
+      <table id="multi-sticky-table" data-fix-rows="3" data-fix-cols="3">
+        <thead>
+          <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th></tr>
+          <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th></tr>
+          <tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+            <tr><td>FixColumn01</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td><td>xxxxxxxxxx</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function updateStickyPositions() {
+        const table = document.getElementById("multi-sticky-table");
+        if (!table) return;
+
+        // 固定したい行数・列数を取得
+        const fixRows = parseInt(table.getAttribute("data-fix-rows") || 0);
+        const fixCols = parseInt(table.getAttribute("data-fix-cols") || 0);
+
+        const rows = table.querySelectorAll("tr");
+
+        // --- 1. 行固定 (Top) の計算 ---
+        // 各行の高さの累積を保持する配列
+        const rowHeights = [];
+        rows.forEach((row, rowIndex) => {
+          const cells = row.children;
+
+          // 現在の行が固定対象の場合、クラスを付与し、topの位置を設定
+          if (rowIndex < fixRows) {
+            // 直前までの行の高さの合計を計算
+            const topOffset = rowHeights.reduce((sum, h) => sum + h, 0);
+
+            Array.from(cells).forEach((cell) => {
+              cell.classList.add("sticky-row");
+              cell.style.setProperty("--sticky-top", `${topOffset}px`);
+            });
+
+            // 次の行のために、現在の行の高さを記録
+            rowHeights.push(row.offsetHeight);
+          } else {
+            Array.from(cells).forEach((cell) => cell.classList.remove("sticky-row"));
+          }
+
+          // --- 2. 列固定 (Left) の計算 ---
+          let leftOffset = 0;
+          Array.from(cells).forEach((cell, colIndex) => {
+            if (colIndex < fixCols) {
+              cell.classList.add("sticky-col");
+              cell.style.setProperty("--sticky-left", `${leftOffset}px`);
+              leftOffset += cell.offsetWidth;
+            } else {
+              cell.classList.remove("sticky-col");
+            }
+          });
+        });
+      }
+
+      // 初期実行
+      window.addEventListener("DOMContentLoaded", updateStickyPositions);
+
+      // ウィンドウのリサイズ時にも再計算（セルの幅・高さが変わるため）
+      window.addEventListener("resize", updateStickyPositions);
+    </script>
+  </body>
+</html>

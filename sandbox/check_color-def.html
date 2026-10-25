@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Color System Preview</title>
+
+<style>
+:root {
+  --color-primary:      hsl(230,  90%,  55%);
+
+  --color-text:         hsl(  0,   0%,  12%);
+  --color-text-inverse: hsl(  0,   0%, 100%);
+
+  --color-surface:      hsl(  0,   0%, 100%);
+  --color-bg:           hsl(  0,   0%,  98%);
+  --color-border:       hsl(  0,   0%,  75%);
+
+  --color-success:      hsl(150,  60%,  35%);
+  --color-warning:      hsl( 30,  95%,  48%);
+  --color-danger:       hsl(  0, 100%,  42%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.color-chip {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.color-chip__preview {
+  height: 80px;
+}
+
+.color-chip__label {
+  padding: 12px;
+  font-size: 14px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bg-primary { background: var(--color-primary); }
+.bg-success { background: var(--color-success); }
+.bg-warning { background: var(--color-warning); }
+.bg-danger  { background: var(--color-danger); }
+.bg-text    { background: var(--color-text); }
+.bg-border  { background: var(--color-border); }
+.bg-bg      { background: var(--color-bg); }
+.bg-surface { background: var(--color-surface); }
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-default {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+.btn-success {
+  background: var(--color-success);
+  color: var(--color-text-inverse);
+}
+.btn-warning {
+  background: var(--color-warning);
+  color: var(--color-text-inverse);
+}
+.btn-danger {
+  background: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+}
+
+.input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.notice {
+  font-weight: 600;
+}
+
+.notice-success { color: var(--color-success);}
+.notice-warning { color: var(--color-warning);}
+.notice-danger { color: var(--color-danger);}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.table th {
+  background: var(--color-bg);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: var(--color-text-inverse);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-success { background: var(--color-success); }
+.badge-warning { background: var(--color-warning); }
+.badge-danger { background: var(--color-danger); }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1 style="color: var(--color-primary);">業務Webアプリ カラープレビュー</h1>
+
+  <section class="section">
+    <h2>カラーパレット</h2>
+
+    <div class="color-grid">
+      <div class="color-chip">
+        <div class="color-chip__preview bg-primary"></div>
+        <div class="color-chip__label">Primary</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-success"></div>
+        <div class="color-chip__label">Success</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-warning"></div>
+        <div class="color-chip__label">Warning</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-danger"></div>
+        <div class="color-chip__label">Danger</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-text"></div>
+        <div class="color-chip__label">Text</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-border"></div>
+        <div class="color-chip__label">Border</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-bg"></div>
+        <div class="color-chip__label">Background</div>
+      </div>
+
+      <div class="color-chip">
+        <div class="color-chip__preview bg-surface"></div>
+        <div class="color-chip__label">Surface</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>ボタン</h2>
+
+    <div class="button-group">
+      <button class="btn btn-default">キャンセル</button>
+      <button class="btn btn-primary">保存</button>
+      <button class="btn btn-success">完了</button>
+      <button class="btn btn-warning">確認</button>
+      <button class="btn btn-danger">削除</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>通知</h2>
+
+    <div class="card">
+      <p class="notice notice-success">
+        ✓ 保存が完了しました。
+      </p>
+      <p class="notice notice-warning">
+        ⚠ 未入力項目があります。
+      </p>
+      <p class="notice notice-danger">
+        ✕ エラーが発生しました。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>テーブル</h2>
+
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>状態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1001</td>
+            <td>顧客マスタ</td>
+            <td><span class="badge badge-success">有効</span></td>
+          </tr>
+          <tr>
+            <td>1002</td>
+            <td>商品マスタ</td>
+            <td><span class="badge badge-warning">確認中</span></td>
+          </tr>
+          <tr>
+            <td>1003</td>
+            <td>売上データ</td>
+            <td><span class="badge badge-danger">エラー</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>フォーム</h2>
+
+    <div class="card">
+      <div class="form">
+        <div>
+          <label class="label">氏名</label>
+          <input class="input" placeholder="山田 太郎">
+        </div>
+
+        <div>
+          <label class="label">メールアドレス</label>
+          <input class="input" placeholder="sample@example.com">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

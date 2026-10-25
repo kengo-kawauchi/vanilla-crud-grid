@@ -1,0 +1,16 @@
+:root {
+  --z-table-col: 10;
+  --z-table-header: 20;
+  --z-table-corner: 30;
+
+  /* 必要になったら追加する */
+  --z-app-header: 100;
+  --z-dropdown: 200;
+  --z-modal: 1000;
+  /*
+    ヘッダ
+    ドロップダウンリスト
+    ポップアップ
+    モーダルウィンドウ
+  */
+}

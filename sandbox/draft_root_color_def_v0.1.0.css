@@ -1,0 +1,46 @@
+:root {
+  --color-primary: hsl(230,  90%, 55%);
+
+  --color-text:    hsl(  0,   0%, 10%);
+  --color-border:  hsl(  0,   0%, 75%);
+  --color-bg:      hsl(  0,   0%, 95%);
+
+  --color-success: hsl(150,  60%, 40%);
+  --color-warning: hsl( 60, 100%, 40%);
+  --color-danger:  hsl(  0, 100%, 45%);
+}
+
+:root {
+  --color-primary: hsl(230, 90%, 55%);
+
+  --color-text:    hsl(0, 0%, 10%);
+  --color-border:  hsl(0, 0%, 75%);
+  --color-bg:      hsl(0, 0%, 95%);
+
+  --color-success: hsl(150, 60%, 40%);
+  /* --color-warning: hsl(60, 100%, 40%); */
+  /* --color-warning: hsl(47, 100%, 36%); */
+  /* --color-warning: hsl(60,  90%, 60%); */
+  --color-warning: hsl(35, 100%, 50%);
+  --color-danger:  hsl(0, 100%, 45%);
+
+  --p: hsl(205, 95%, 40%);
+  --bg: hsl(0, 0%, 98%);
+  --th: hsl(0, 0%, 92%);
+  --bd: hsl(0, 0%, 87%);
+  --txt:hsl(0, 0%, 12%);
+}
+
+:root {
+  --blue:    #0075e3; /* メインのボタン等に使用 */
+  --magenta: #DF1F5B; /* 警告などに使用 */
+  --gray-01: #f8f7f6; /* ベースの背景の塗りつぶし */
+  --gray-02: #edebe6; /* 表形式のタイトル行など一部の強調表示する項目 */
+  --gray-03: #aaa69f; /* (仮)枠線 代替候補:#E1DFDB*/
+  --gray-04: #4e4c49; /* 使用予定なし */
+  --black:   #23221f; /* テキストの色 */
+  --white:   #ffffff; /* 各要素の塗りつぶし(ボタンや表のセルなど) */
+
+  --cyan:    #00c4cc; /* 追加の色が必要な場合に使用。定義に含めるか検討中 */
+  --orange:  #ff9900; /* 追加の色が必要な場合に使用。定義に含めるか検討中 */
+}

@@ -1,0 +1,27 @@
+:root {
+  /* Primitive */
+  --blue: #0075e3;
+  --magenta: #df1f5b;
+  --orange: #ff9900;
+
+  --gray-01: #f8f7f6;
+  --gray-02: #edebe6;
+  --gray-03: #aaa69f;
+
+  --black: #23221f;
+  --white: #ffffff;
+
+  /* Semantic */
+  --color-primary: var(--blue);
+  --color-danger: var(--magenta);
+  --color-warning: var(--orange);
+
+  --color-text: var(--black);
+  --color-text-inverse: var(--white);
+
+  --color-bg: var(--gray-01);
+  --color-surface: var(--white);
+
+  --color-border: var(--gray-03);
+  --color-header-bg: var(--gray-02);
+}
